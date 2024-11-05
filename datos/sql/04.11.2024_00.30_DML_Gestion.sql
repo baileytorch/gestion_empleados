@@ -213,4 +213,25 @@ INSERT INTO tipos_empleado (tipo_empleado, descripcion_tipo_empleado) VALUES
 ('Técnico Operario', 'Empleado de especialización técnica.'),
 ('Operario', 'Empleado con funciones de asistencia no técnica.');
 
-INSERT INTO 
+INSERT INTO modulos (codigo_modulo, nombre_modulo, descripcion_modulo) VALUES
+('RRHH', 'Gestión de Empleados', 'Creación y mantención de Empleados. Asociación con Departamentos y Proyectos.'),
+('GCOM', 'Gestión Comercial', 'Creación y mantención de Clientes.'),
+('GDEP', 'Gestión de Departamentos', 'Creación y mantención de Departamentos. Asociación con Gerentes.'),
+('GPRO', 'Gestión de Proyectos', 'Creación y mantención de Proyectos. Asociación con Clientes.'),
+('GINF', 'Generación de Informes', 'Creación y mantención de Informes.'),
+('RHRS', 'Registro de Tiempo', 'Ingreso de horas trabajadas por proyectos específicos.'),
+('GSIS', 'Gestión de Sistema', 'Configuración de Sistema. Creación y mantención de módulos y permisos.');
+
+INSERT INTO roles (rol, descripcion_rol, permisos_rol) VALUES
+('Administrador General', 'Control completo de sistema. Creación y mantención de módulos y permisos', 'RRHH,GCOM,GDEP,GPRO,GINF,RHRS,GSIS'),
+('Administrador Comercial', 'Control comercial. Creación y mantención de clientes y relaciones comerciales.', 'RRHH,GCOM,GINF,RHRS'),
+('Gerente de Área', 'Control completo de Departamentos.', 'RRHH,GDEP,GPRO,GINF,RHRS'),
+('Técnico', 'Empleado de nivel técnico. Registro de horas trabajadas y generación de informes.', 'GINF,RHRS'),
+('Operario', 'Empleado sin nivel técnico. Registro de horas trabajadas.', 'RHRS');
+
+INSERT INTO empleados (rut_empleado, nombre_empleado, fecha_contrato, salario_empleado, correo_empleado, telefono_empleado, direccion_empleado, fecha_nacimiento_empleado, id_tipo_empleado, id_rol, codigo_pais) VALUES
+('18755039-4','Aquiles Baeza Parada',CURDATE(),4500000,'aquiles_baeza@gmail.com','569123456','',SELECT DATE_SUB(CURDATE(), INTERVAL 45 YEAR)),
+('12258720-7','Alan Brito Delgado',CURDATE(),3500000,'alan_brito@gmail.com','569456789','',SELECT DATE_SUB(CURDATE(), INTERVAL 40 YEAR)),
+('4162738-7','Patricio Donald',CURDATE(),2500000,'pato_donald@gmail.com','569147258','',SELECT DATE_SUB(CURDATE(), INTERVAL 35 YEAR)),
+('15265109-0','Susana Oria Naranja',CURDATE(),1500000,'susanaoria@gmail.com','569258369','',SELECT DATE_SUB(CURDATE(), INTERVAL 30 YEAR)),
+('5107955-8','Zacarías Flores del Campo',CURDATE(),500000,'zacariasdelcampo@gmail.com','569987654','',SELECT DATE_SUB(CURDATE(), INTERVAL 25 YEAR));

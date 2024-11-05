@@ -7,6 +7,14 @@ CREATE TABLE IF NOT EXISTS tipos_empleado (
     habilitado TINYINT NOT NULL DEFAULT 1,
     PRIMARY KEY (id_tipo_empleado));
 
+CREATE TABLE IF NOT EXISTS modulos (
+    id_modulo INT NOT NULL AUTO_INCREMENT,
+    codigo_modulo VARCHAR(25) NOT NULL,
+    nombre_modulo VARCHAR(50) NOT NULL,
+    descripcion_modulo VARCHAR(255) NULL,
+    habilitado TINYINT NOT NULL DEFAULT 1,
+    PRIMARY KEY (id_modulo));
+
 CREATE TABLE IF NOT EXISTS roles (
     id_rol INT NOT NULL AUTO_INCREMENT,
     rol VARCHAR(50) NOT NULL,
@@ -22,14 +30,6 @@ CREATE TABLE IF NOT EXISTS paises (
     gentilicio_pais VARCHAR(50) NULL,
     habilitado TINYINT NOT NULL DEFAULT 1,
     PRIMARY KEY (codigo_pais));
-
-CREATE TABLE IF NOT EXISTS modulos (
-    id_modulo INT NOT NULL AUTO_INCREMENT,
-    codigo_modulo VARCHAR(25) NOT NULL,
-    nombre_modulo VARCHAR(50) NOT NULL,
-    descripcion_modulo VARCHAR(255) NULL,
-    habilitado TINYINT NOT NULL DEFAULT 1,
-    PRIMARY KEY (id_modulo));
 
 CREATE TABLE IF NOT EXISTS empleados (
     id_empleado INT NOT NULL AUTO_INCREMENT,
