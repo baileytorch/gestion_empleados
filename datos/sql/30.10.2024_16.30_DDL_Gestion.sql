@@ -1,5 +1,13 @@
 USE gestion_empleados;
 
+CREATE TABLE IF NOT EXISTS paises (
+    codigo_pais INT NOT NULL,
+    codigo_iso3_pais VARCHAR(3) NULL,
+    nombre_pais VARCHAR(50) NOT NULL,
+    gentilicio_pais VARCHAR(50) NULL,
+    habilitado TINYINT NOT NULL DEFAULT 1,
+    PRIMARY KEY (codigo_pais));
+
 CREATE TABLE IF NOT EXISTS tipos_empleado (
     id_tipo_empleado INT NOT NULL AUTO_INCREMENT,
     tipo_empleado VARCHAR(50) NOT NULL,
@@ -23,14 +31,6 @@ CREATE TABLE IF NOT EXISTS roles (
     habilitado TINYINT NOT NULL DEFAULT 1,
     PRIMARY KEY (id_rol));
 
-CREATE TABLE IF NOT EXISTS paises (
-    codigo_pais INT NOT NULL,
-    codigo_iso3_pais VARCHAR(3) NULL,
-    nombre_pais VARCHAR(50) NOT NULL,
-    gentilicio_pais VARCHAR(50) NULL,
-    habilitado TINYINT NOT NULL DEFAULT 1,
-    PRIMARY KEY (codigo_pais));
-
 CREATE TABLE IF NOT EXISTS empleados (
     id_empleado INT NOT NULL AUTO_INCREMENT,
     rut_empleado VARCHAR(10) NOT NULL,
@@ -49,16 +49,6 @@ CREATE TABLE IF NOT EXISTS empleados (
     CONSTRAINT fk_tipo_empleado FOREIGN KEY (id_tipo_empleado) REFERENCES tipos_empleado(id_tipo_empleado),
     CONSTRAINT fk_rol_empleado FOREIGN KEY (id_rol) REFERENCES roles(id_rol),
     CONSTRAINT fk_pais_empleado FOREIGN KEY (codigo_pais) REFERENCES paises(codigo_pais));
-
-CREATE TABLE IF NOT EXISTS log_db (
-    id_log INT NOT NULL AUTO_INCREMENT,
-    fecha_log DATETIME NOT NULL,
-    accion_log VARCHAR(25) NOT NULL,
-    tabla_log VARCHAR(50) NOT NULL,
-    comentario_log VARCHAR(25) NOT NULL,
-    id_empleado INT NOT NULL,
-    PRIMARY KEY (id_log),
-    CONSTRAINT fk_empleado_log FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado));
 
 CREATE TABLE IF NOT EXISTS departamentos (
     id_departamento INT NOT NULL AUTO_INCREMENT,
@@ -149,3 +139,13 @@ CREATE TABLE IF NOT EXISTS informe (
     PRIMARY KEY (id_informe),
     CONSTRAINT fk_tipo_informe FOREIGN KEY (id_tipo_informe) REFERENCES tipos_informe(id_tipo_informe),
     CONSTRAINT fk_empleado_informe FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado));
+
+CREATE TABLE IF NOT EXISTS log_db (
+    id_log INT NOT NULL AUTO_INCREMENT,
+    fecha_log DATETIME NOT NULL,
+    accion_log VARCHAR(25) NOT NULL,
+    tabla_log VARCHAR(50) NOT NULL,
+    comentario_log VARCHAR(25) NOT NULL,
+    id_empleado INT NOT NULL,
+    PRIMARY KEY (id_log),
+    CONSTRAINT fk_empleado_log FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado));
