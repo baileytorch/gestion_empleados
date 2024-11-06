@@ -208,7 +208,7 @@ INSERT INTO paises (codigo_pais, codigo_iso3_pais, nombre_pais, gentilicio_pais)
 INSERT INTO tipos_empleado (tipo_empleado, descripcion_tipo_empleado) VALUES
 ('Administrador', 'Usuario administrador, control total del sistema.'),
 ('Gerente Departamento', 'Gerente de departamento, gestiona departamentos específicos.'),
-('Administrativo', 'Empleado con funciones administrativas.')
+('Administrativo', 'Empleado con funciones administrativas.'),
 ('Técnico Operario', 'Empleado de especialización técnica.'),
 ('Operario', 'Empleado con funciones de asistencia no técnica.');
 
@@ -390,14 +390,50 @@ INSERT INTO empleados_proyecto (id_empleado, id_proyecto) VALUES
 
 INSERT INTO registros_tiempo (fecha_registro, tiempo_trabajado, tareas_realizadas, observaciones, id_empleado_proyecto) VALUES
 (CURDATE(),
-    (SELECT id_empleado_proyecto FROM empleados_proyecto WHERE rut_empleado = '15265109-0' AND nombre_proyecto = 'HHRR Management')),
+    4.0,
+    'Creación repositorio y rama desarrollo.',
+    'Creación repositorio github para aplicación. Creación de rama dedesarrollo. Incorporación colaboradores a rama desarrollo.',
+    (SELECT EP.id_empleado_proyecto FROM empleados_proyecto EP
+        JOIN empleados E ON EP.id_empleado = E.id_empleado
+        JOIN proyectos P ON EP.id_proyecto = P.id_proyecto
+        WHERE E.rut_empleado = '15265109-0' AND P.nombre_proyecto = 'HHRR Management')),
 (CURDATE(),
-    (SELECT id_empleado_proyecto FROM empleados_proyecto WHERE rut_empleado = '19327725-K' AND nombre_proyecto = 'HHRR Management')),
+    4.0,
+    'Recepción documentación. Inicio análisis requerimientos.',
+    'Inicio análisis preliminar de requerimientos en base a documentación recibida.',
+    (SELECT EP.id_empleado_proyecto FROM empleados_proyecto EP
+        JOIN empleados E ON EP.id_empleado = E.id_empleado
+        JOIN proyectos P ON EP.id_proyecto = P.id_proyecto
+        WHERE E.rut_empleado = '19327725-K' AND P.nombre_proyecto = 'HHRR Management')),
 (CURDATE(),
-    (SELECT id_empleado_proyecto FROM empleados_proyecto WHERE rut_empleado = '11514618-1' AND nombre_proyecto = 'HHRR Management')),
+    4.0,
+    'Recepción documentación. Inicio análisis requerimientos.',
+    'Inicio análisis preliminar de requerimientos en base a documentación recibida.',
+    (SELECT EP.id_empleado_proyecto FROM empleados_proyecto EP
+        JOIN empleados E ON EP.id_empleado = E.id_empleado
+        JOIN proyectos P ON EP.id_proyecto = P.id_proyecto
+        WHERE E.rut_empleado = '11514618-1' AND P.nombre_proyecto = 'HHRR Management')),
 (CURDATE(),
-    (SELECT id_empleado_proyecto FROM empleados_proyecto WHERE rut_empleado = '15265109-0' AND nombre_proyecto = 'Gestión Inventario')),
+    4.0,
+    'Creación repositorio y rama desarrollo.',
+    'Creación repositorio github para aplicación. Creación de rama dedesarrollo. Incorporación colaboradores a rama desarrollo.',
+    (SELECT EP.id_empleado_proyecto FROM empleados_proyecto EP
+        JOIN empleados E ON EP.id_empleado = E.id_empleado
+        JOIN proyectos P ON EP.id_proyecto = P.id_proyecto
+        WHERE E.rut_empleado = '15265109-0' AND P.nombre_proyecto = 'Gestión Inventario')),
 (CURDATE(),
-    (SELECT id_empleado_proyecto FROM empleados_proyecto WHERE rut_empleado = '19327725-K' AND nombre_proyecto = 'Gestión Inventario')),
+    4.0,
+    'Recepción documentación. Inicio análisis requerimientos.',
+    'Inicio análisis preliminar de requerimientos en base a documentación recibida.',
+    (SELECT EP.id_empleado_proyecto FROM empleados_proyecto EP
+        JOIN empleados E ON EP.id_empleado = E.id_empleado
+        JOIN proyectos P ON EP.id_proyecto = P.id_proyecto
+        WHERE E.rut_empleado = '19327725-K' AND P.nombre_proyecto = 'Gestión Inventario')),
 (CURDATE(),
-    (SELECT id_empleado_proyecto FROM empleados_proyecto WHERE rut_empleado = '11514618-1' AND nombre_proyecto = 'Gestión Inventario'));
+    4.0,
+    'Recepción documentación. Inicio análisis requerimientos.',
+    'Inicio análisis preliminar de requerimientos en base a documentación recibida.',
+    (SELECT EP.id_empleado_proyecto FROM empleados_proyecto EP
+        JOIN empleados E ON EP.id_empleado = E.id_empleado
+        JOIN proyectos P ON EP.id_proyecto = P.id_proyecto
+        WHERE E.rut_empleado = '11514618-1' AND P.nombre_proyecto = 'Gestión Inventario'));
