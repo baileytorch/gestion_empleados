@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS empleados (
     telefono_empleado VARCHAR(12) NULL,
     direccion_empleado VARCHAR(255) NULL,
     fecha_nacimiento_empleado DATE NOT NULL,
+    contrasena_empleado VARCHAR(50) NULL,
     habilitado TINYINT NOT NULL DEFAULT 1,
     id_tipo_empleado INT NOT NULL,
     id_rol INT NOT NULL,

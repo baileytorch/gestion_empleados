@@ -25,3 +25,14 @@ def generar_conexion():
             print(error)
     else:
         conexion.close()
+        
+def ejecutar_consultas(consulta):
+    try:        
+        conexion = generar_conexion()
+        cursor = conexion.cursor()
+        cursor.execute(consulta)
+        data = cursor      
+        return data
+    finally:
+        cursor.close()
+        conexion.close()
