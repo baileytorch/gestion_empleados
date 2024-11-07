@@ -1,5 +1,5 @@
 import datos.conexion_db as conexion
-   
+
 def listado_empleados():
     consulta = f"""
         SELECT 

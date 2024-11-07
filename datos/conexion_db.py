@@ -26,13 +26,14 @@ def generar_conexion():
     else:
         conexion.close()
         
-def ejecutar_consultas(consulta):
-    try:        
-        conexion = generar_conexion()
-        cursor = conexion.cursor()
-        cursor.execute(consulta)
-        data = cursor      
-        return data
-    finally:
-        cursor.close()
-        conexion.close()
+def ejecutar_consultas(consulta):      
+    conexion = generar_conexion()
+    cursor = conexion.cursor()
+    cursor.execute(consulta)
+    if cursor != None:
+        resultado = cursor.fetchall()
+        cursor.close()    
+        return resultado
+    else:
+        print("Su búsqueda no arrojó resultados...")
+    conexion.close()

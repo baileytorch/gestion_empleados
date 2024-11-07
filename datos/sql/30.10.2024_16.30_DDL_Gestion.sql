@@ -55,16 +55,16 @@ CREATE TABLE IF NOT EXISTS departamentos (
     id_departamento INT NOT NULL AUTO_INCREMENT,
     nombre_departamento VARCHAR(50) NULL,
     descripcion_departamento VARCHAR(255) NULL,
-    id_empleado INT NULL,
     habilitado TINYINT NOT NULL DEFAULT 1,
+    id_empleado INT NULL,
     PRIMARY KEY (id_departamento),
     CONSTRAINT fk_gerente_departamento FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado));
 
 CREATE TABLE IF NOT EXISTS empleados_departamento (
     id_empleado_departamento INT NOT NULL AUTO_INCREMENT,
+    habilitado TINYINT NOT NULL DEFAULT 1,
     id_empleado INT NOT NULL,
     id_departamento INT NOT NULL,
-    habilitado TINYINT NOT NULL DEFAULT 1,
     PRIMARY KEY (id_empleado_departamento),
     CONSTRAINT fk_empleado_departamento FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado),
     CONSTRAINT fk_departamento_empleado FOREIGN KEY (id_departamento) REFERENCES departamentos(id_departamento));
@@ -105,9 +105,9 @@ CREATE TABLE IF NOT EXISTS documentos_proyecto (
 
 CREATE TABLE IF NOT EXISTS empleados_proyecto (
     id_empleado_proyecto INT NOT NULL AUTO_INCREMENT,
+    habilitado TINYINT NOT NULL DEFAULT 1,
     id_empleado INT NOT NULL,
     id_proyecto INT NOT NULL,
-    habilitado TINYINT NOT NULL DEFAULT 1,
     PRIMARY KEY (id_empleado_proyecto),
     CONSTRAINT fk_empleado_proyecto FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado),
     CONSTRAINT fk_proyecto_empleado FOREIGN KEY (id_proyecto) REFERENCES proyectos(id_proyecto));
