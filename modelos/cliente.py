@@ -1,4 +1,5 @@
-from pais import Pais as pais
+from modelos.pais import Pais as pais
+
 class Cliente(pais):
     def __init__(self, codigo_pais, id_cliente = 0, rut_cliente = '', razon_social = '', correo_contacto = '', telefono_contacto = '', direccion_cliente = '', habilitado = True):
         super().__init__(codigo_pais)

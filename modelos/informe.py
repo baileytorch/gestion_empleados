@@ -1,5 +1,5 @@
-from tipo_informe import TipoInforme as tipo_informe
-from empleado import Empleado as empleado
+from modelos.tipo_informe import TipoInforme as tipo_informe
+from modelos.empleado import Empleado as empleado
 
 class Informe(tipo_informe, empleado):
     def __init__(self, id_tipo_informe = 0, id_empleado = 0, id_informe = 0, fecha_creacion = '', ubicacion_informe = '', habilitado = True):

@@ -1,5 +1,5 @@
-from cliente import Cliente as cliente
-from departamento import Departamento as departamento
+from modelos.cliente import Cliente as cliente
+from modelos.departamento import Departamento as departamento
 
 class Proyecto(cliente, departamento):
     def __init__(self, id_cliente = 0, id_departamento = 0, id_proyecto = 0, nombre_proyecto = '', descripcion_proyecto = '', fecha_inicio_proyecto = '', fecha_fin_proyecto = '', habilitado = True):

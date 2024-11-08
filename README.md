@@ -16,3 +16,6 @@ pip install ttkbootstrap
 
 Para trabajo con imágenes https://pypi.org/project/pillow/
 pip install pillow
+
+Para encriptación https://platzi.com/tutoriales/2514-fastapi-errores/14590-como-encriptar-contrasenas-en-python-y-por-que-hacerlo/
+pip install bcrypt

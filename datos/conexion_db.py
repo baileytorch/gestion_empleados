@@ -26,14 +26,27 @@ def generar_conexion():
     else:
         conexion.close()
         
-def ejecutar_consultas(consulta):      
+def leer_datos(consulta):      
     conexion = generar_conexion()
     cursor = conexion.cursor()
-    cursor.execute(consulta)
     if cursor != None:
+        cursor.execute(consulta)
         resultado = cursor.fetchall()
         cursor.close()    
         return resultado
+    else:
+        print("Su búsqueda no arrojó resultados...")
+    conexion.close()
+        
+def insertar_datos(consulta):      
+    conexion = generar_conexion()
+    cursor = conexion.cursor()
+    if cursor != None:
+        cursor.execute(consulta)
+        conexion.commit()
+        id = cursor.lastrowid
+        cursor.close()        
+        return print(f"Id registro insertado = {id}")
     else:
         print("Su búsqueda no arrojó resultados...")
     conexion.close()

@@ -1,5 +1,5 @@
-from empleado import Empleado as empleado
-from departamento import Departamento as departamento
+from modelos.empleado import Empleado as empleado
+from modelos.departamento import Departamento as departamento
 
 class EmpleadoDepartamento(departamento, empleado):
     def __init__(self, id_empleado_departamento = 0, id_empleado = 0, id_departamento = 0, habilitado = True):

@@ -1,4 +1,4 @@
-from empleado import Empleado as empleado
+from modelos.empleado import Empleado as empleado
 
 class Departamento(empleado):
     def __init__(self, id_empleado = 0, id_departamento = 0, nombre_departamento = '', descripcion_departamento = '', habilitado = True):

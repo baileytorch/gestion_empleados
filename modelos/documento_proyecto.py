@@ -1,4 +1,4 @@
-from proyecto import Proyecto as proyecto
+from modelos.proyecto import Proyecto as proyecto
 
 class DocumentoProyecto(proyecto):
     def __init__(self, id_proyecto= 0, id_documento_proyecto = 0, nombre_documento = '', ubicacion_documento = '', habilitado = True):

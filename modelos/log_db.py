@@ -1,4 +1,4 @@
-from empleado import Empleado as empleado
+from modelos.empleado import Empleado as empleado
 
 class LogDB:
     def __init__(self, id_empleado = 0, id_log = 0, fecha_log = '', accion_log = '', tabla_log = '', comentario_log = ''):

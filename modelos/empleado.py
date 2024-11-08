@@ -1,9 +1,23 @@
-from tipo_empleado import TipoEmpleado as tipo_empleado
-from rol import Rol as rol
-from pais import Pais as pais
+from modelos.tipo_empleado import TipoEmpleado as tipo_empleado
+from modelos.rol import Rol as rol
+from modelos.pais import Pais as pais
 
 class Empleado(tipo_empleado, rol, pais):
-    def __init__(self, id_tipo_empleado = 0, id_rol = 0, codigo_pais = 0, id_empleado = 0, rut_empleado = '', nombre_empleado = '', fecha_contrato = '', salario_empleado = 0, correo_empleado = '', telefono_empleado = '', direccion_empleado = '', fecha_nacimiento_empleado = '', contrasena_empleado = '', habilitado = True):
+    def __init__(self,
+            id_tipo_empleado = 0,
+            id_rol = 0,
+            codigo_pais = 0,
+            id_empleado = 0,
+            rut_empleado = '',
+            nombre_empleado = '',
+            fecha_contrato = '',
+            salario_empleado = 0,
+            correo_empleado = '',
+            telefono_empleado = '',
+            direccion_empleado = '',
+            fecha_nacimiento_empleado = '',
+            contrasena_empleado = '',
+            habilitado = True):
         super().__init__(id_tipo_empleado)
         super().__init__(id_rol)
         super().__init__(codigo_pais)
