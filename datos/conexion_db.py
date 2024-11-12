@@ -18,7 +18,7 @@ def generar_conexion():
     
     except mysql.connector.Error as error:
         if error.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Acceso denegado para el usuario o la contraseña")
+            print("Acceso denegado, usuario o contraseña incorrectos.")
         elif error.errno == errorcode.ER_BAD_DB_ERROR:
             print("Su base de datos NO existe")
         else:
@@ -50,3 +50,12 @@ def insertar_datos(consulta):
     else:
         print("Su búsqueda no arrojó resultados...")
     conexion.close()
+
+# from sqlalchemy import create_engine
+# from sqlalchemy import text
+
+# engine = create_engine(f"mysql+mysqlconnector://{user}:{password}@{host}/{database}")
+
+# def  generar_conexion():
+#     conexion = engine.connect()
+#     return conexion

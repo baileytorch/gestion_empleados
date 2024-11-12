@@ -774,7 +774,7 @@ INSERT INTO empleados (rut_empleado, nombre_empleado, fecha_contrato, salario_em
 
 INSERT INTO departamentos (nombre_departamento, descripcion_departamento) VALUES
 ('RRHH', 'Departamento de Recursos Humanos'),
-('ID', 'Investigación y Tecnología'),
+('ID', 'Investigación y Desarrollo'),
 ('Comercial', 'Departamento de Gestión Comercial'),
 ('Mantención', 'Departamento de Mantención Interna');
 

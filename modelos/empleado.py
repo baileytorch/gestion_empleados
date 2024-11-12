@@ -16,7 +16,6 @@ class Empleado(tipo_empleado, rol, pais, direccion):
             salario_empleado = 0,
             correo_empleado = '',
             telefono_empleado = '',
-            direccion_empleado = '',
             fecha_nacimiento_empleado = '',
             contrasena_empleado = '',
             habilitado = True):
@@ -31,7 +30,6 @@ class Empleado(tipo_empleado, rol, pais, direccion):
         self.salario_empleado = salario_empleado
         self.correo_empleado = correo_empleado
         self.telefono_empleado = telefono_empleado
-        self.direccion_empleado = direccion_empleado
         self.fecha_nacimiento_empleado = fecha_nacimiento_empleado
         self.contrasena_empleado = contrasena_empleado
         self.habilitado = habilitado

@@ -19,3 +19,6 @@ pip install pillow
 
 Para encriptación https://platzi.com/tutoriales/2514-fastapi-errores/14590-como-encriptar-contrasenas-en-python-y-por-que-hacerlo/
 pip install bcrypt
+
+SQLAlchemy ORM https://docs.sqlalchemy.org/en/20/index.html
+pip install sqlalchemy
