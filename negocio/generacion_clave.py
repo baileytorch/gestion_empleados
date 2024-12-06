@@ -5,6 +5,7 @@ def generacion_clave():
     key = Fernet.generate_key()
     clave_guardar = f"clave_guardada = {key}"
     
+    
     file = 'clave.py'
     location = os.path.join('auxiliares', file)
     location = os.path.abspath(location)
